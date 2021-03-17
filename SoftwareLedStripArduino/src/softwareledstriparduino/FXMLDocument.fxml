@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="401.0" prefWidth="389.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="softwareledstriparduino.FXMLDocumentController">
+    <children>
+        <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
+      <Accordion layoutX="21.0" layoutY="120.0" minWidth="-Infinity" prefHeight="256.0" prefWidth="114.0">
+        <panes>
+          <TitledPane animated="false" text="Efeitos">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="Rainbow Cycle" />
+                        <Button layoutX="14.0" layoutY="47.0" mnemonicParsing="false" text="RGB Loop" />
+                        <Button layoutX="14.0" layoutY="78.0" mnemonicParsing="false" text="Fade In Out" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </TitledPane>
+          <TitledPane animated="false" text="Running Lights ">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="Red" />
+                        <Button layoutX="14.0" layoutY="51.0" mnemonicParsing="false" text="Green" />
+                        <Button layoutX="12.0" layoutY="90.0" mnemonicParsing="false" text="Blue" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </TitledPane>
+          <TitledPane animated="false" text="Color Wipe">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="Red" />
+                        <Button layoutX="14.0" layoutY="51.0" mnemonicParsing="false" text="Green" />
+                        <Button layoutX="12.0" layoutY="90.0" mnemonicParsing="false" text="Blue" />
+                        <Button layoutX="12.0" layoutY="127.0" mnemonicParsing="false" text="White" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </TitledPane>
+        </panes>
+      </Accordion>
+      <ComboBox layoutX="21.0" layoutY="21.0" prefWidth="150.0" />
+      <Button layoutX="272.0" layoutY="21.0" mnemonicParsing="false" text="Conectar" />
+    </children>
+</AnchorPane>
