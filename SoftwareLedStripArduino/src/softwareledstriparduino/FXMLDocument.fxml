@@ -6,7 +6,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="401.0" prefWidth="389.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="softwareledstriparduino.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="401.0" prefWidth="389.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="softwareledstriparduino.FXMLDocumentController">
     <children>
         <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
       <Accordion layoutX="21.0" layoutY="120.0" minWidth="-Infinity" prefHeight="256.0" prefWidth="114.0">
@@ -15,9 +15,9 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="Rainbow Cycle" />
-                        <Button layoutX="14.0" layoutY="47.0" mnemonicParsing="false" text="RGB Loop" />
-                        <Button layoutX="14.0" layoutY="78.0" mnemonicParsing="false" text="Fade In Out" />
+                        <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#ligarRainbowCycle" text="Rainbow Cycle" />
+                        <Button layoutX="14.0" layoutY="47.0" mnemonicParsing="false" onAction="#ligarRGBLoop" text="RGB Loop" />
+                        <Button layoutX="14.0" layoutY="78.0" mnemonicParsing="false" onAction="#ligarFadeInOut" text="Fade In Out" />
                      </children>
                   </AnchorPane>
             </content>
@@ -37,17 +37,18 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="Red" />
-                        <Button layoutX="14.0" layoutY="51.0" mnemonicParsing="false" text="Green" />
-                        <Button layoutX="12.0" layoutY="90.0" mnemonicParsing="false" text="Blue" />
-                        <Button layoutX="12.0" layoutY="127.0" mnemonicParsing="false" text="White" />
+                        <Button fx:id="btnR" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#red" text="Red" />
+                        <Button fx:id="btnG" layoutX="14.0" layoutY="51.0" mnemonicParsing="false" onAction="#green" text="Green" />
+                        <Button fx:id="btnB" layoutX="12.0" layoutY="90.0" mnemonicParsing="false" onAction="#blue" text="Blue" />
+                        <Button fx:id="btnW" layoutX="12.0" layoutY="127.0" mnemonicParsing="false" onAction="#white" text="White" />
                      </children>
                   </AnchorPane>
             </content>
           </TitledPane>
         </panes>
       </Accordion>
-      <ComboBox layoutX="21.0" layoutY="21.0" prefWidth="150.0" />
-      <Button layoutX="272.0" layoutY="21.0" mnemonicParsing="false" text="Conectar" />
+      <ComboBox fx:id="cbPortas" layoutX="21.0" layoutY="21.0" prefWidth="150.0" />
+      <Button fx:id="btnConectar" layoutX="272.0" layoutY="21.0" mnemonicParsing="false" onAction="#conectar" text="Conectar" />
+      <Button layoutX="323.0" layoutY="364.0" mnemonicParsing="false" text="Reset" />
     </children>
 </AnchorPane>
