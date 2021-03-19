@@ -1,10 +1,10 @@
 1	A	rainbowCycle(30);
 2	B	RGBLoop();
 3	C	FadeInOut   
-4	D	RunningLights(0xff, 0x00, 0x00, 50);
-5	E	RunningLights(0x00, 0xff, 0x00, 50);
-6	F	RunningLights(0x00, 0x00, 0xff, 50);
-7	G	colorWipe(0xff, 0x00, 0x00, 50);      
-8	H	colorWipe(0x00, 0xff, 0x00, 50);
-9	I	colorWipe(0x00, 0x00, 0xff, 50);
-10	J	colorWipe(0xff, 0xff, 0xff, 50);
+4	D	RunningLights	R
+5	E	RunningLights	G
+6	F	RunningLights	B
+7	G	colorWipe	R
+8	H	colorWipe	G
+9	I	colorWipe	B
+10	J	colorWipe	W

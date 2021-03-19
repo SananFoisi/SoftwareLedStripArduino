@@ -26,7 +26,7 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="Red" />
+                        <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#RunningLightsRED" text="Red" />
                         <Button layoutX="14.0" layoutY="51.0" mnemonicParsing="false" text="Green" />
                         <Button layoutX="12.0" layoutY="90.0" mnemonicParsing="false" text="Blue" />
                      </children>
@@ -37,10 +37,10 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Button fx:id="btnR" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#red" text="Red" />
-                        <Button fx:id="btnG" layoutX="14.0" layoutY="51.0" mnemonicParsing="false" onAction="#green" text="Green" />
-                        <Button fx:id="btnB" layoutX="12.0" layoutY="90.0" mnemonicParsing="false" onAction="#blue" text="Blue" />
-                        <Button fx:id="btnW" layoutX="12.0" layoutY="127.0" mnemonicParsing="false" onAction="#white" text="White" />
+                        <Button fx:id="btnR" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#ColorWipeRED" text="Red" />
+                        <Button fx:id="btnG" layoutX="14.0" layoutY="51.0" mnemonicParsing="false" onAction="#ColorWipeGREEN" text="Green" />
+                        <Button fx:id="btnB" layoutX="12.0" layoutY="90.0" mnemonicParsing="false" onAction="#ColorWipeBLUE" text="Blue" />
+                        <Button fx:id="btnW" layoutX="12.0" layoutY="127.0" mnemonicParsing="false" onAction="#ColorWipeWHITE" text="White" />
                      </children>
                   </AnchorPane>
             </content>
@@ -49,6 +49,6 @@
       </Accordion>
       <ComboBox fx:id="cbPortas" layoutX="21.0" layoutY="21.0" prefWidth="150.0" />
       <Button fx:id="btnConectar" layoutX="272.0" layoutY="21.0" mnemonicParsing="false" onAction="#conectar" text="Conectar" />
-      <Button layoutX="323.0" layoutY="364.0" mnemonicParsing="false" text="Reset" />
+      <Button fx:id="btnReset" layoutX="323.0" layoutY="364.0" mnemonicParsing="false" onAction="#reset" text="Reset" />
     </children>
 </AnchorPane>

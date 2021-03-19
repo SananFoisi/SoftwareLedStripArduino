@@ -27,6 +27,9 @@ public class FXMLDocumentController implements Initializable {
     private Button btnConectar;
 
     @FXML
+    private Button btnReset;
+
+    @FXML
     private Button btnR;
     @FXML
     private Button btnG;
@@ -39,6 +42,8 @@ public class FXMLDocumentController implements Initializable {
     private char RainbowCycle = '0';
     private char RGBLoop = '0';
     private char FadeInOut = '0';
+    private char RunningLights = '0';
+    private char ColorWipe = '0';
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -74,6 +79,16 @@ public class FXMLDocumentController implements Initializable {
      * EFEITOS
      *
      */
+    @FXML
+    private void reset() {
+        PrintWriter outputFITA = new PrintWriter(porta.getOutputStream());
+
+        if (btnReset.getText().equals("Reset")) {
+            outputFITA.print('0');
+            outputFITA.flush();
+        }
+    }
+
     @FXML
     private void ligarRainbowCycle() {
         PrintWriter outputFITA = new PrintWriter(porta.getOutputStream());
@@ -120,48 +135,79 @@ public class FXMLDocumentController implements Initializable {
     }
 
     /*MERDAS*/
+//    RunningLights
     @FXML
-    private void red() {
+    private void RunningLightsRED() {
         PrintWriter outputFITA = new PrintWriter(porta.getOutputStream());
+        if (RunningLights == '0') {
+            outputFITA.print('4');
+            outputFITA.flush();
+            ColorWipe = '4';
+        } else {
+            outputFITA.print('0');
+            outputFITA.flush();
+            RunningLights = '0';
+        }
+    }
+//    RunningLightsGREEN
+//    RunningLightsBLUE
+
+    //COLOR WIPE
+    @FXML
+    private void ColorWipeRED() {
+        PrintWriter outputFITA = new PrintWriter(porta.getOutputStream());
+
+        if (ColorWipe == '0') {
+            outputFITA.print('7');
+            outputFITA.flush();
+            ColorWipe = '7';
+        } else {
+            outputFITA.print('0');
+            outputFITA.flush();
+            ColorWipe = '0';
+        }
 
         if (btnR.getText().equals("Red")) {
             outputFITA.print('g');
+            outputFITA.flush();
+        } else {
+            outputFITA.print('0');
             outputFITA.flush();
         }
 
     }
 
     @FXML
-    private void green() {
+    private void ColorWipeGREEN() {
         PrintWriter outputFITA = new PrintWriter(porta.getOutputStream());
 
         if (btnG.getText().equals("Green")) {
             outputFITA.print('h');
             outputFITA.flush();
         }
-
+//PASSAR ELSE PARA DESLIGAR
     }
 
     @FXML
-    private void blue() {
+    private void ColorWipeBLUE() {
         PrintWriter outputFITA = new PrintWriter(porta.getOutputStream());
 
         if (btnB.getText().equals("Blue")) {
             outputFITA.print('i');
             outputFITA.flush();
         }
-
+//PASSAR ELSE PARA DESLIGAR
     }
 
     @FXML
-    private void white() {
+    private void ColorWipeWHITE() {
         PrintWriter outputFITA = new PrintWriter(porta.getOutputStream());
 
         if (btnW.getText().equals("White")) {
             outputFITA.print('j');
             outputFITA.flush();
         }
-
+//PASSAR ELSE PARA DESLIGAR
     }
 
 }
