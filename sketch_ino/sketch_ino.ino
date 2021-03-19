@@ -150,7 +150,7 @@ void loop()
       }
       break;
 
-    case 'a':
+    case 'z':
       while (_DEZ < 2048)
       {
         colorWipe(0xff, 0xff, 0xff, 50);

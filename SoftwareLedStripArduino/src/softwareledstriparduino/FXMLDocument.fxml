@@ -9,15 +9,15 @@
 <AnchorPane id="AnchorPane" prefHeight="401.0" prefWidth="389.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="softwareledstriparduino.FXMLDocumentController">
     <children>
         <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
-      <Accordion layoutX="21.0" layoutY="120.0" minWidth="-Infinity" prefHeight="256.0" prefWidth="114.0">
+      <Accordion fx:id="menuEfeitos" layoutX="21.0" layoutY="120.0" minWidth="-Infinity" prefHeight="256.0" prefWidth="114.0">
         <panes>
           <TitledPane animated="false" text="Efeitos">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#ligarRainbowCycle" text="Rainbow Cycle" />
-                        <Button layoutX="14.0" layoutY="47.0" mnemonicParsing="false" onAction="#ligarRGBLoop" text="RGB Loop" />
-                        <Button layoutX="14.0" layoutY="78.0" mnemonicParsing="false" onAction="#ligarFadeInOut" text="Fade In Out" />
+                        <Button fx:id="btnRC" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#ligarRainbowCycle" text="Rainbow Cycle" />
+                        <Button fx:id="btnRGB" layoutX="14.0" layoutY="47.0" mnemonicParsing="false" onAction="#ligarRGBLoop" text="RGB Loop" />
+                        <Button fx:id="btnFIO" layoutX="14.0" layoutY="78.0" mnemonicParsing="false" onAction="#ligarFadeInOut" text="Fade In Out" />
                      </children>
                   </AnchorPane>
             </content>
@@ -26,9 +26,9 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#RunningLightsRED" text="Red" />
-                        <Button layoutX="14.0" layoutY="51.0" mnemonicParsing="false" text="Green" />
-                        <Button layoutX="12.0" layoutY="90.0" mnemonicParsing="false" text="Blue" />
+                        <Button fx:id="btnRLR" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#RunningLightsRED" text="Red" />
+                        <Button fx:id="btnRLG" layoutX="14.0" layoutY="51.0" mnemonicParsing="false" onAction="#RunningLightsGREEN" text="Green" />
+                        <Button fx:id="btnRLB" layoutX="12.0" layoutY="90.0" mnemonicParsing="false" onAction="#RunningLightsBLUE" text="Blue" />
                      </children>
                   </AnchorPane>
             </content>
@@ -37,10 +37,10 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Button fx:id="btnR" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#ColorWipeRED" text="Red" />
-                        <Button fx:id="btnG" layoutX="14.0" layoutY="51.0" mnemonicParsing="false" onAction="#ColorWipeGREEN" text="Green" />
-                        <Button fx:id="btnB" layoutX="12.0" layoutY="90.0" mnemonicParsing="false" onAction="#ColorWipeBLUE" text="Blue" />
-                        <Button fx:id="btnW" layoutX="12.0" layoutY="127.0" mnemonicParsing="false" onAction="#ColorWipeWHITE" text="White" />
+                        <Button fx:id="btnCWR" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#ColorWipeRED" text="Red" />
+                        <Button fx:id="btnCWG" layoutX="14.0" layoutY="51.0" mnemonicParsing="false" onAction="#ColorWipeGREEN" text="Green" />
+                        <Button fx:id="btnCWB" layoutX="12.0" layoutY="90.0" mnemonicParsing="false" onAction="#ColorWipeBLUE" text="Blue" />
+                        <Button fx:id="btnCWW" layoutX="12.0" layoutY="127.0" mnemonicParsing="false" onAction="#ColorWipeWHITE" text="White" />
                      </children>
                   </AnchorPane>
             </content>
