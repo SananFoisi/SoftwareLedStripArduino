@@ -1,54 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="401.0" prefWidth="389.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="softwareledstriparduino.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="463.0" prefWidth="391.0" styleClass="background" stylesheets="@../view/DarkTheme.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="softwareledstriparduino.FXMLDocumentController">
     <children>
-        <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
-      <Accordion fx:id="menuEfeitos" layoutX="21.0" layoutY="120.0" minWidth="-Infinity" prefHeight="256.0" prefWidth="114.0">
-        <panes>
-          <TitledPane animated="false" text="Efeitos">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                     <children>
-                        <Button fx:id="btnRC" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#ligarRainbowCycle" text="Rainbow Cycle" />
-                        <Button fx:id="btnRGB" layoutX="14.0" layoutY="47.0" mnemonicParsing="false" onAction="#ligarRGBLoop" text="RGB Loop" />
-                        <Button fx:id="btnFIO" layoutX="14.0" layoutY="78.0" mnemonicParsing="false" onAction="#ligarFadeInOut" text="Fade In Out" />
-                     </children>
-                  </AnchorPane>
-            </content>
-          </TitledPane>
-          <TitledPane animated="false" text="Running Lights ">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                     <children>
-                        <Button fx:id="btnRLR" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#RunningLightsRED" text="Red" />
-                        <Button fx:id="btnRLG" layoutX="14.0" layoutY="51.0" mnemonicParsing="false" onAction="#RunningLightsGREEN" text="Green" />
-                        <Button fx:id="btnRLB" layoutX="12.0" layoutY="90.0" mnemonicParsing="false" onAction="#RunningLightsBLUE" text="Blue" />
-                     </children>
-                  </AnchorPane>
-            </content>
-          </TitledPane>
-          <TitledPane animated="false" text="Color Wipe">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                     <children>
-                        <Button fx:id="btnCWR" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#ColorWipeRED" text="Red" />
-                        <Button fx:id="btnCWG" layoutX="14.0" layoutY="51.0" mnemonicParsing="false" onAction="#ColorWipeGREEN" text="Green" />
-                        <Button fx:id="btnCWB" layoutX="12.0" layoutY="90.0" mnemonicParsing="false" onAction="#ColorWipeBLUE" text="Blue" />
-                        <Button fx:id="btnCWW" layoutX="12.0" layoutY="127.0" mnemonicParsing="false" onAction="#ColorWipeWHITE" text="White" />
-                     </children>
-                  </AnchorPane>
-            </content>
-          </TitledPane>
-        </panes>
-      </Accordion>
-      <ComboBox fx:id="cbPortas" layoutX="21.0" layoutY="21.0" prefWidth="150.0" />
-      <Button fx:id="btnConectar" layoutX="272.0" layoutY="21.0" mnemonicParsing="false" onAction="#conectar" text="Conectar" />
-      <Button fx:id="btnReset" layoutX="323.0" layoutY="364.0" mnemonicParsing="false" onAction="#reset" text="Reset" />
+        <Label fx:id="label" alignment="CENTER" layoutX="149.0" layoutY="35.0" minHeight="16" minWidth="69" styleClass="label-header" text="Nome Aqui" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
+        <Accordion fx:id="menuEfeitos" layoutX="14.0" layoutY="155.0" minWidth="-Infinity" prefHeight="256.0" prefWidth="171.0">
+            <panes>
+                <TitledPane animated="false" prefHeight="206.0" prefWidth="146.0" text="Efeitos">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="150.0" prefWidth="169.0" style="-fx-border-radius: 20;" styleClass="pane" stylesheets="@../view/DarkTheme.css">
+                            <children>
+                                <Button fx:id="btnRC" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#ligarRainbowCycle" text="Rainbow Cycle">
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding></Button>
+                                <Button fx:id="btnRGB" layoutX="14.0" layoutY="47.0" mnemonicParsing="false" onAction="#ligarRGBLoop" text="RGB Loop" />
+                                <Button fx:id="btnFIO" layoutX="14.0" layoutY="80.0" mnemonicParsing="false" onAction="#ligarFadeInOut" text="Fade In Out" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </TitledPane>
+                <TitledPane animated="false" text="Running Lights ">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <Button fx:id="btnRLR" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#RunningLightsRED" text="Red" />
+                                <Button fx:id="btnRLG" layoutX="14.0" layoutY="51.0" mnemonicParsing="false" onAction="#RunningLightsGREEN" text="Green" />
+                                <Button fx:id="btnRLB" layoutX="12.0" layoutY="90.0" mnemonicParsing="false" onAction="#RunningLightsBLUE" text="Blue" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </TitledPane>
+                <TitledPane animated="false" text="Color Wipe">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <Button fx:id="btnCWR" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#ColorWipeRED" text="Red" />
+                                <Button fx:id="btnCWG" layoutX="14.0" layoutY="51.0" mnemonicParsing="false" onAction="#ColorWipeGREEN" text="Green" />
+                                <Button fx:id="btnCWB" layoutX="12.0" layoutY="90.0" mnemonicParsing="false" onAction="#ColorWipeBLUE" text="Blue" />
+                                <Button fx:id="btnCWW" layoutX="12.0" layoutY="127.0" mnemonicParsing="false" onAction="#ColorWipeWHITE" text="White" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </TitledPane>
+            </panes>
+        </Accordion>
+        <ComboBox fx:id="cbPortas" layoutX="14.0" layoutY="99.0" prefHeight="33.0" prefWidth="171.0" promptText="Portas COM" style="-fx-background-color: #ffffff;" />
+        <Button fx:id="btnConectar" layoutX="269.0" layoutY="99.0" mnemonicParsing="false" onAction="#conectar" prefHeight="25.0" prefWidth="106.0" text="Conectar" />
+        <Button fx:id="btnReset" layoutX="291.0" layoutY="368.0" mnemonicParsing="false" onAction="#reset" text="Reset" />
     </children>
+   <opaqueInsets>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </opaqueInsets>
 </AnchorPane>
