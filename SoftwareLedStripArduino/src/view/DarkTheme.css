@@ -106,14 +106,18 @@ and open the template in the editor.
  * http://pixelduke.wordpress.com/2012/10/23/jmetro-windows-8-controls-on-java/
  */
 
-.combo-box {
+.accordion .titled-pane .title {
+    -fx-background-color: white;
     -fx-border-color: #000000;
+}
+
+.combo-box {
+    /* -fx-border-color: #000000; */
     -fx-background-color: #ffffff;
     -fx-text-fill: #000000;
-    
-    -fx-border-radius: 90;
-    -fx-background-radius: 90;
-    -fx-border-width: 2;
+    -fx-border-radius: 2;
+    /* -fx-background-radius: 4; */
+    /* -fx-border-width: 2; */
 }
 
 .button {
@@ -124,8 +128,8 @@ and open the template in the editor.
     -fx-font-size: 11pt;
     -fx-text-fill: #000000;
     -fx-background-insets: 0 0 0 0, 0, 1, 2;
-    -fx-border-radius: 90;
-    -fx-background-radius: 90;
+    -fx-border-radius: 2;
+    -fx-background-radius: 4;
     -fx-border-width: 2;
 }
 
