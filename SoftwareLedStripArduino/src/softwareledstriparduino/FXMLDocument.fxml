@@ -51,8 +51,8 @@
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                   <children>
                                       <Button fx:id="btnRLR" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#RunningLightsRED" text="Red" />
-                                      <Button fx:id="btnRLG" layoutX="14.0" layoutY="91.0" mnemonicParsing="false" onAction="#RunningLightsGREEN" text="Green" />
-                                      <Button fx:id="btnRLB" layoutX="162.0" layoutY="14.0" mnemonicParsing="false" onAction="#RunningLightsBLUE" text="Blue" />
+                                      <Button fx:id="btnRLG" layoutX="151.0" layoutY="14.0" mnemonicParsing="false" onAction="#RunningLightsGREEN" text="Green" />
+                                      <Button fx:id="btnRLB" layoutX="13.0" layoutY="84.0" mnemonicParsing="false" onAction="#RunningLightsBLUE" text="Blue" />
                               <Button layoutX="151.0" layoutY="84.0" mnemonicParsing="false" text="White" />
                                   </children>
                               </AnchorPane>

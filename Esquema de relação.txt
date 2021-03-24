@@ -1,10 +1,16 @@
-1	A	rainbowCycle(30);
-2	B	RGBLoop();
-3	C	FadeInOut   
-4	D	RunningLights	R
-5	E	RunningLights	G
-6	F	RunningLights	B
-7	G	colorWipe	R
-8	H	colorWipe	G
-9	I	colorWipe	B
-10	J	colorWipe	W
+1	    A	RainbowCycle
+2	    B	Rainbow
+3	    C	FadeInOut  
+4       D   Random
+
+5	    D	Running Lights	(RED)
+6	    E	Running Lights	(GREEN)
+7	    F	Running Lights  (BLUE)
+8       G   Running Lights  (WHITE)
+
+9       H   color Wipe   (BLUE)
+10 (a)  I   color Wipe   (CIAN)
+11 (b)  J   color Wipe   (GREEN)
+12 (c)  K   color Wipe   (MAGENTA)
+13 (d)  L   color Wipe   (RED )
+14 (e)  M   color Wipe   (WHITE)
