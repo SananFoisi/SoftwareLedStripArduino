@@ -2,15 +2,13 @@
 2	    B	Rainbow
 3	    C	FadeInOut  
 4       D   Random
-
-5	    D	Running Lights	(RED)
-6	    E	Running Lights	(GREEN)
-7	    F	Running Lights  (BLUE)
-8       G   Running Lights  (WHITE)
-
-9       H   color Wipe   (BLUE)
-10 (a)  I   color Wipe   (CIAN)
-11 (b)  J   color Wipe   (GREEN)
-12 (c)  K   color Wipe   (MAGENTA)
-13 (d)  L   color Wipe   (RED )
-14 (e)  M   color Wipe   (WHITE)
+5	    E	Running Lights	(RED)
+6	    F	Running Lights	(GREEN)
+7	    G	Running Lights  (BLUE)
+8       H   Running Lights  (WHITE)
+9       I   Color Wipe      (BLUE)
+10 (a)  J   Color Wipe      (CIAN)
+11 (b)  K   Color Wipe      (GREEN)
+12 (c)  L   Color Wipe      (MAGENTA)
+13 (d)  M   Color Wipe      (RED)
+14 (e)  N   Color Wipe      (WHITE)
