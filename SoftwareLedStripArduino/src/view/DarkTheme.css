@@ -100,12 +100,6 @@ and open the template in the editor.
     -fx-font-family: "Segoe UI Semibold";
 }
 
-/* 
- * Metro style Push Button
- * Author: Pedro Duque Vieira
- * http://pixelduke.wordpress.com/2012/10/23/jmetro-windows-8-controls-on-java/
- */
-
 .accordion .titled-pane .title {
     -fx-background-color: white;
     -fx-border-color: #000000;
@@ -120,8 +114,14 @@ and open the template in the editor.
     /* -fx-border-width: 2; */
 }
 
+/* 
+ * Metro style Push Button
+ * Author: Pedro Duque Vieira
+ * http://pixelduke.wordpress.com/2012/10/23/jmetro-windows-8-controls-on-java/
+ */
+
 .button {
-    -fx-padding: 5 22 5 22;
+    -fx-padding: 5 5 5 5;
     -fx-border-color: #000000;
     -fx-background-color: #ffffff;
     -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;

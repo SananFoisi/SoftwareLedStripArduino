@@ -15,7 +15,7 @@
         <ComboBox fx:id="cbPortas" layoutX="14.0" layoutY="99.0" promptText="Portas COM" style="-fx-background-color: #ffffff;" />
         <Button fx:id="btnConectar" layoutX="322.0" layoutY="95.0" mnemonicParsing="false" onAction="#conectar" text="Conectar" />
         <Button fx:id="btnReset" layoutX="344.0" layoutY="365.0" mnemonicParsing="false" onAction="#reset" text="Reset" />
-      <VBox layoutX="14.0" layoutY="147.0" prefHeight="232.0" prefWidth="292.0">
+      <VBox layoutX="14.0" layoutY="147.0" prefHeight="234.0" prefWidth="241.0">
          <children>
               <Accordion fx:id="menuEfeitos" prefHeight="262.0" prefWidth="303.0">
                   <panes>
@@ -23,12 +23,12 @@
                           <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="220.0">
                                   <children>
-                                      <Button fx:id="btnCWR" layoutX="21.0" layoutY="14.0" mnemonicParsing="false" onAction="#ColorWipeRED" text="Red" />
-                                      <Button fx:id="btnCWG" layoutX="21.0" layoutY="64.0" mnemonicParsing="false" onAction="#ColorWipeGREEN" text="Green" />
-                                      <Button fx:id="btnCWB" layoutX="20.0" layoutY="107.0" mnemonicParsing="false" onAction="#ColorWipeBLUE" text="Blue" />
-                                      <Button fx:id="btnCWW" layoutX="189.0" layoutY="14.0" mnemonicParsing="false" onAction="#ColorWipeWHITE" text="White" />
-                              <Button layoutX="170.0" layoutY="59.0" mnemonicParsing="false" text="Magenta" />
-                              <Button layoutX="190.0" layoutY="107.0" mnemonicParsing="false" text="Ciano" />
+                                      <Button fx:id="btnCWR" layoutX="98.0" layoutY="60.0" mnemonicParsing="false" onAction="#ColorWipeRED" text="Red" />
+                                      <Button fx:id="btnCWG" layoutX="136.0" layoutY="14.0" mnemonicParsing="false" onAction="#ColorWipeGREEN" text="Green" />
+                                      <Button fx:id="btnCWB" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#ColorWipeBLUE" text="Blue" />
+                                      <Button fx:id="btnCWW" layoutX="153.0" layoutY="60.0" mnemonicParsing="false" onAction="#ColorWipeWHITE" text="White" />
+                              <Button layoutX="14.0" layoutY="60.0" mnemonicParsing="false" text="Magenta" />
+                              <Button layoutX="72.0" layoutY="14.0" mnemonicParsing="false" text="Ciano" />
                                   </children>
                               </AnchorPane>
                           </content>
@@ -38,10 +38,10 @@
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="150.0" prefWidth="169.0" style="-fx-border-radius: 20;" styleClass="pane" stylesheets="@../view/DarkTheme.css">
                                   <children>
                                       <Button fx:id="btnRC" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#ligarRainbowCycle" text="Rainbow Cycle" />
-                                      <Button fx:id="btnRGB" layoutX="171.0" layoutY="14.0" mnemonicParsing="false" onAction="#ligarRGBLoop" text="RGB Loop" />
-                                      <Button fx:id="btnFIO" layoutX="157.0" layoutY="57.0" mnemonicParsing="false" onAction="#ligarFadeInOut" text="Fade In Out" />
-                              <Button layoutX="14.0" layoutY="57.0" mnemonicParsing="false" text="Rainbow" />
-                              <Button layoutX="99.0" layoutY="105.0" mnemonicParsing="false" text="Random" />
+                                      <Button fx:id="btnRGB" layoutX="14.0" layoutY="104.0" mnemonicParsing="false" onAction="#ligarRGBLoop" text="RGB Loop" />
+                                      <Button fx:id="btnFIO" layoutX="14.0" layoutY="58.0" mnemonicParsing="false" onAction="#ligarFadeInOut" text="Fade In Out" />
+                              <Button layoutX="133.0" layoutY="14.0" mnemonicParsing="false" text="Rainbow" />
+                              <Button layoutX="134.0" layoutY="58.0" mnemonicParsing="false" text="Random" />
                                   </children>
                               </AnchorPane>
                           </content>
