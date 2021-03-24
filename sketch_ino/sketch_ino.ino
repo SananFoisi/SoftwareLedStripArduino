@@ -8,9 +8,6 @@
 
 #define DATA_PIN 2  // Pino de E/S digital conectado aos NeoPixels.
 #define NUM_LEDS 45 // Número de LEDs na fita
-#define botReset 4  //Porta de entrada do botao Reset
-
-// const int botReset = 4;
 
 int _UM = 0;
 int _DOIS = 0;
@@ -21,14 +18,21 @@ int _SEIS = 0;
 int _SETE = 0;
 int _OITO = 0;
 int _NOVE = 0;
-int _DEZ = 0; //a
+int _DEZ = 0;      //a
+int _ONZE = 0;     //b
+int _DOZE = 0;     //c
+int _TREZE = 0;    //d
+int _QUATORZE = 0; //e
 
-// Define o Keypad (mapa do circuito do teclado).
+//variaveis switch para trocas
+char dado;
+char troca;
 
 //***PROTOTIPAÇÃO DE FUNÇÕES***
 void rainbowCycle(int SpeedDelay);
-byte *Wheel(byte WheelPos); /*PERTENCE A RAINBOW*/
-void RGBLoop();
+byte *Wheel(byte WheelPos); /*PERTENCE A RAINBOW CYCLE*/
+void rainbow(uint8_t wait)
+    uint32_t Wheel(byte WheelPos); /*PERTENCE A RAINBOW*/
 void FadeInOut(byte red, byte green, byte blue);
 void RunningLights(byte red, byte green, byte blue, int WaveDelay);
 void colorWipe(byte red, byte green, byte blue, int SpeedDelay);
@@ -40,13 +44,8 @@ void setAll(byte red, byte green, byte blue);
 // FUNCTION RESET ARDUINO
 void (*funcReset)() = 0;
 
-// Cria um "objeto" Keypad (Teclado)
-
 // Cria um "objeto" Adafruit_NeoPixel (Fita LED)
 Adafruit_NeoPixel strip(NUM_LEDS, DATA_PIN, NEO_GRB + NEO_KHZ800);
-
-char dado;
-char troca;
 
 void setup()
 {
@@ -56,11 +55,10 @@ void setup()
   clock_prescale_set(clock_div_1);
 #endif
   // FIM do código específico do Trinket.
-  Serial.begin(9600);              //frequência da porta serial
-  strip.begin();                   // Inicialize o objeto de tira NeoPixel (NECESSÁRIO)
-  strip.show();                    // trocaUE todos os pixels o mais rápido possível
-  strip.setBrightness(200);        //Brilho da tira
-  pinMode(botReset, INPUT_PULLUP); // Entrada do botao RESET
+  Serial.begin(9600);       //frequência da porta serial
+  strip.begin();            //Inicialize o objeto de tira NeoPixel (NECESSÁRIO)
+  strip.show();             //DESLIGUE todos os pixels o mais rápido possível
+  strip.setBrightness(200); //Brilho da tira
 }
 
 void loop()
@@ -72,95 +70,95 @@ void loop()
 
     switch (dado)
     {
-      //EFEITOS
-      case '1':
-        while (_UM < 2048)
-        {
-          rainbowCycle(30);
-          _UM++;
-        }
-        break;
+    //EFEITOS
+    case '1':
+      while (_UM < 2048)
+      {
+        rainbowCycle(30);
+        _UM++;
+      }
+      break;
 
-      case '2':
-        while (_DOIS < 2048)
-        {
-          RGBLoop();
-          _DOIS++;
-        }
-        break;
+    case '2':
+      while (_DOIS < 2048)
+      {
+        rainbow(20);
+        _DOIS++;
+      }
+      break;
 
-      case '3':
-        while (_TRES < 2048)
-        {
-          FadeInOut(0x00, 0x00, 0xff); // blue
-          FadeInOut(0x00, 0xff, 0xff); // ciano
-          FadeInOut(0x00, 0xff, 0x00); // green
-          FadeInOut(0xff, 0xff, 0x00); // yellow
-          FadeInOut(0xff, 0x00, 0x00); // red
-          FadeInOut(0xff, 0x14, 0x93); // pink
-          _TRES++;
-        }
-        break;
+    case '3':
+      while (_TRES < 2048)
+      {
+        FadeInOut(0x00, 0x00, 0xff); // blue
+        FadeInOut(0x00, 0xff, 0xff); // ciano
+        FadeInOut(0x00, 0xff, 0x00); // green
+        FadeInOut(0xff, 0xff, 0x00); // yellow
+        FadeInOut(0xff, 0x00, 0x00); // red
+        FadeInOut(0xff, 0x14, 0x93); // pink
+        _TRES++;
+      }
+      break;
 
-      case '4':
-        while (_QUATRO < 2048)
-        {
-          RunningLights(0xff, 0x00, 0x00, 50);
-          _QUATRO++;
-        }
-        break;
+    case '4':
+      while (_QUATRO < 2048)
+      {
+        RunningLights(0xff, 0x00, 0x00, 50);
+        _QUATRO++;
+      }
+      break;
 
-      case '5':
-        while (_CINCO < 2048)
-        {
-          RunningLights(0x00, 0xff, 0x00, 50);
-          _CINCO++;
-        }
-        break;
+    case '5':
+      while (_CINCO < 2048)
+      {
+        RunningLights(0x00, 0xff, 0x00, 50);
+        _CINCO++;
+      }
+      break;
 
-      case '6':
-        while (_SEIS < 2048)
-        {
-          RunningLights(0x00, 0x00, 0xff, 50);
-          _SEIS++;
-        }
-        break;
+    case '6':
+      while (_SEIS < 2048)
+      {
+        RunningLights(0x00, 0x00, 0xff, 50);
+        _SEIS++;
+      }
+      break;
 
-      case '7':
-        while (_SETE < 2048)
-        {
-          colorWipe(0xff, 0x00, 0x00, 50);
-          _SETE++;
-        }
-        break;
+    case '7':
+      while (_SETE < 2048)
+      {
+        colorWipe(0xff, 0x00, 0x00, 50);
+        _SETE++;
+      }
+      break;
 
-      case '8':
-        while (_OITO < 2048)
-        {
-          colorWipe(0x00, 0xff, 0x00, 50);
-          _OITO++;
-        }
-        break;
+    case '8':
+      while (_OITO < 2048)
+      {
+        colorWipe(0x00, 0xff, 0x00, 50);
+        _OITO++;
+      }
+      break;
 
-      case '9':
-        while (_NOVE < 2048)
-        {
-          colorWipe(0x00, 0x00, 0xff, 50);
-          _NOVE++;
-        }
-        break;
+    case '9':
+      while (_NOVE < 2048)
+      {
+        colorWipe(0x00, 0x00, 0xff, 50);
+        _NOVE++;
+      }
+      break;
 
-      case 'z':
-        while (_DEZ < 2048)
-        {
-          colorWipe(0xff, 0xff, 0xff, 50);
-          _DEZ++;
-        }
-        break;
+    case 'z':
+      while (_DEZ < 2048)
+      {
+        colorWipe(0xff, 0xff, 0xff, 50);
+        _DEZ++;
+      }
+      break;
 
-      default:
-        Serial.println(dado);
-        break;
+    default:
+      Serial.println(dado);
+      break;
     }
   }
 }
@@ -182,9 +180,9 @@ void rainbowCycle(int SpeedDelay)
         troca = Serial.read(); //lê os dados da porta serial
         switch (troca)
         {
-          case '0':
-            funcReset(); //Reset
-            break;
+        case '0':
+          funcReset(); //Reset
+          break;
 
           // case 'a':
           //   while (_UM < 2048)
@@ -194,87 +192,87 @@ void rainbowCycle(int SpeedDelay)
           //   }
           //   break;
 
-          case 'b':
-            while (_DOIS < 2048)
-            {
-              RGBLoop();
-              _DOIS++;
-            }
-            break;
+        case 'b':
+          while (_DOIS < 2048)
+          {
+            RGBLoop();
+            _DOIS++;
+          }
+          break;
 
-          case 'c':
-            while (_TRES < 2048)
-            {
-              FadeInOut(0x00, 0x00, 0xff); // blue
-              FadeInOut(0x00, 0xff, 0xff); // ciano
-              FadeInOut(0x00, 0xff, 0x00); // green
-              FadeInOut(0xff, 0xff, 0x00); // yellow
-              FadeInOut(0xff, 0x00, 0x00); // red
-              FadeInOut(0xff, 0x14, 0x93); // pink
-              _TRES++;
-            }
-            break;
+        case 'c':
+          while (_TRES < 2048)
+          {
+            FadeInOut(0x00, 0x00, 0xff); // blue
+            FadeInOut(0x00, 0xff, 0xff); // ciano
+            FadeInOut(0x00, 0xff, 0x00); // green
+            FadeInOut(0xff, 0xff, 0x00); // yellow
+            FadeInOut(0xff, 0x00, 0x00); // red
+            FadeInOut(0xff, 0x14, 0x93); // pink
+            _TRES++;
+          }
+          break;
 
-          case 'd':
-            while (_QUATRO < 2048)
-            {
-              RunningLights(0xff, 0x00, 0x00, 50);
-              _QUATRO++;
-            }
-            break;
+        case 'd':
+          while (_QUATRO < 2048)
+          {
+            RunningLights(0xff, 0x00, 0x00, 50);
+            _QUATRO++;
+          }
+          break;
 
-          case 'e':
-            while (_CINCO < 2048)
-            {
-              RunningLights(0x00, 0xff, 0x00, 50);
-              _CINCO++;
-            }
-            break;
+        case 'e':
+          while (_CINCO < 2048)
+          {
+            RunningLights(0x00, 0xff, 0x00, 50);
+            _CINCO++;
+          }
+          break;
 
-          case 'f':
-            while (_SEIS < 2048)
-            {
-              RunningLights(0x00, 0x00, 0xff, 50);
-              _SEIS++;
-            }
-            break;
+        case 'f':
+          while (_SEIS < 2048)
+          {
+            RunningLights(0x00, 0x00, 0xff, 50);
+            _SEIS++;
+          }
+          break;
 
-          case 'g':
-            while (_SETE < 2048)
-            {
-              colorWipe(0xff, 0x00, 0x00, 50);
-              _SETE++;
-            }
-            break;
+        case 'g':
+          while (_SETE < 2048)
+          {
+            colorWipe(0xff, 0x00, 0x00, 50);
+            _SETE++;
+          }
+          break;
 
-          case 'h':
-            while (_OITO < 2048)
-            {
-              colorWipe(0x00, 0xff, 0x00, 50);
-              _OITO++;
-            }
-            break;
+        case 'h':
+          while (_OITO < 2048)
+          {
+            colorWipe(0x00, 0xff, 0x00, 50);
+            _OITO++;
+          }
+          break;
 
-          case 'i':
-            while (_NOVE < 2048)
-            {
-              colorWipe(0x00, 0x00, 0xff, 50);
-              _NOVE++;
-            }
-            break;
+        case 'i':
+          while (_NOVE < 2048)
+          {
+            colorWipe(0x00, 0x00, 0xff, 50);
+            _NOVE++;
+          }
+          break;
 
-          case 'j':
-            while (_DEZ < 2048)
-            {
-              colorWipe(0xff, 0xff, 0xff, 50);
-              _DEZ++;
-            }
-            break;
+        case 'j':
+          while (_DEZ < 2048)
+          {
+            colorWipe(0xff, 0xff, 0xff, 50);
+            _DEZ++;
+          }
+          break;
 
-          default:
-            //Serial.println(dado);
-            Serial.println(troca);
-            break;
+        default:
+          //Serial.println(dado);
+          Serial.println(troca);
+          break;
         }
       }
       /***/
@@ -284,7 +282,7 @@ void rainbowCycle(int SpeedDelay)
   }
 }
 
-byte *Wheel(byte WheelPos) /*PERTENCE A RAINBOW*/
+byte *Wheel(byte WheelPos) /*PERTENCE A RAINBOW CYCLE*/
 {
   static byte c[3];
 
@@ -312,256 +310,37 @@ byte *Wheel(byte WheelPos) /*PERTENCE A RAINBOW*/
   return c;
 }
 
-void RGBLoop()
+void rainbow(uint8_t wait)
 {
-  for (int j = 0; j < 3; j++)
+  uint16_t i, j;
+
+  for (j = 0; j < 256; j++)
   {
-    // Fade IN
-    for (int k = 0; k < 256; k++)
+    for (i = 0; i < strip.numPixels(); i++)
     {
-      switch (j)
-      {
-        case 0:
-          setAll(k, 0, 0);
-          break;
-        case 1:
-          setAll(0, k, 0);
-          break;
-        case 2:
-          setAll(0, 0, k);
-          break;
-      }
-
-      /***/
-      if (Serial.available() > 0)
-      {
-        troca = Serial.read(); //lê os dados da porta serial
-        switch (troca)
-        {
-          case '0':
-            funcReset(); //Reset
-            break;
-
-          case 'a':
-            while (_UM < 2048)
-            {
-              rainbowCycle(30);
-              _UM++;
-            }
-            break;
-
-          // case 'b':
-          //   while (_DOIS < 2048)
-          //   {
-          //     RGBLoop();
-          //     _DOIS++;
-          //   }
-          //   break;
-
-          case 'c':
-            while (_TRES < 2048)
-            {
-              FadeInOut(0x00, 0x00, 0xff); // blue
-              FadeInOut(0x00, 0xff, 0xff); // ciano
-              FadeInOut(0x00, 0xff, 0x00); // green
-              FadeInOut(0xff, 0xff, 0x00); // yellow
-              FadeInOut(0xff, 0x00, 0x00); // red
-              FadeInOut(0xff, 0x14, 0x93); // pink
-              _TRES++;
-            }
-            break;
-
-          case 'd':
-            while (_QUATRO < 2048)
-            {
-              RunningLights(0xff, 0x00, 0x00, 50);
-              _QUATRO++;
-            }
-            break;
-
-          case 'e':
-            while (_CINCO < 2048)
-            {
-              RunningLights(0x00, 0xff, 0x00, 50);
-              _CINCO++;
-            }
-            break;
-
-          case 'f':
-            while (_SEIS < 2048)
-            {
-              RunningLights(0x00, 0x00, 0xff, 50);
-              _SEIS++;
-            }
-            break;
-
-          case 'g':
-            while (_SETE < 2048)
-            {
-              colorWipe(0xff, 0x00, 0x00, 50);
-              _SETE++;
-            }
-            break;
-
-          case 'h':
-            while (_OITO < 2048)
-            {
-              colorWipe(0x00, 0xff, 0x00, 50);
-              _OITO++;
-            }
-            break;
-
-          case 'i':
-            while (_NOVE < 2048)
-            {
-              colorWipe(0x00, 0x00, 0xff, 50);
-              _NOVE++;
-            }
-            break;
-
-          case 'j':
-            while (_DEZ < 2048)
-            {
-              colorWipe(0xff, 0xff, 0xff, 50);
-              _DEZ++;
-            }
-            break;
-
-          default:
-            //Serial.println(dado);
-            Serial.println(troca);
-            break;
-        }
-      }
-      /***/
-
-      showStrip();
-      delay(3);
+      strip.setPixelColor(i, Wheel((i + j) & 255));
     }
-    // Fade OUT
-    for (int k = 255; k >= 0; k--)
-    {
-      switch (j)
-      {
-        case 0:
-          setAll(k, 0, 0);
-          break;
-        case 1:
-          setAll(0, k, 0);
-          break;
-        case 2:
-          setAll(0, 0, k);
-          break;
-      }
-
-      /***/
-      if (Serial.available() > 0)
-      {
-        troca = Serial.read(); //lê os dados da porta serial
-        switch (troca)
-        {
-          case '0':
-            funcReset(); //Reset
-            break;
-
-          case 'a':
-            while (_UM < 2048)
-            {
-              rainbowCycle(30);
-              _UM++;
-            }
-            break;
-
-          // case 'b':
-          //   while (_DOIS < 2048)
-          //   {
-          //     RGBLoop();
-          //     _DOIS++;
-          //   }
-          //   break;
-
-          case 'c':
-            while (_TRES < 2048)
-            {
-              FadeInOut(0x00, 0x00, 0xff); // blue
-              FadeInOut(0x00, 0xff, 0xff); // ciano
-              FadeInOut(0x00, 0xff, 0x00); // green
-              FadeInOut(0xff, 0xff, 0x00); // yellow
-              FadeInOut(0xff, 0x00, 0x00); // red
-              FadeInOut(0xff, 0x14, 0x93); // pink
-              _TRES++;
-            }
-            break;
-
-          case 'd':
-            while (_QUATRO < 2048)
-            {
-              RunningLights(0xff, 0x00, 0x00, 50);
-              _QUATRO++;
-            }
-            break;
-
-          case 'e':
-            while (_CINCO < 2048)
-            {
-              RunningLights(0x00, 0xff, 0x00, 50);
-              _CINCO++;
-            }
-            break;
-
-          case 'f':
-            while (_SEIS < 2048)
-            {
-              RunningLights(0x00, 0x00, 0xff, 50);
-              _SEIS++;
-            }
-            break;
-
-          case 'g':
-            while (_SETE < 2048)
-            {
-              colorWipe(0xff, 0x00, 0x00, 50);
-              _SETE++;
-            }
-            break;
-
-          case 'h':
-            while (_OITO < 2048)
-            {
-              colorWipe(0x00, 0xff, 0x00, 50);
-              _OITO++;
-            }
-            break;
-
-          case 'i':
-            while (_NOVE < 2048)
-            {
-              colorWipe(0x00, 0x00, 0xff, 50);
-              _NOVE++;
-            }
-            break;
-
-          case 'j':
-            while (_DEZ < 2048)
-            {
-              colorWipe(0xff, 0xff, 0xff, 50);
-              _DEZ++;
-            }
-            break;
-
-          default:
-            //Serial.println(dado);
-            Serial.println(troca);
-            break;
-        }
-      }
-      /***/
-
-      showStrip();
-      delay(3);
-    }
+    strip.show();
+    delay(wait);
   }
 }
+
+uint32_t Wheel(byte WheelPos)
+{
+  WheelPos = 255 - WheelPos;
+  if (WheelPos < 85)
+  {
+    return strip.Color(255 - WheelPos * 3, 0, WheelPos * 3);
+  }
+  if (WheelPos < 170)
+  {
+    WheelPos -= 85;
+    return strip.Color(0, WheelPos * 3, 255 - WheelPos * 3);
+  }
+  WheelPos -= 170;
+  return strip.Color(WheelPos * 3, 255 - WheelPos * 3, 0);
+}
+
 void FadeInOut(byte red, byte green, byte blue)
 {
   float r, g, b;
@@ -578,25 +357,25 @@ void FadeInOut(byte red, byte green, byte blue)
       troca = Serial.read(); //lê os dados da porta serial
       switch (troca)
       {
-        case '0':
-          funcReset(); //Reset
-          break;
+      case '0':
+        funcReset(); //Reset
+        break;
 
-        case 'a':
-          while (_UM < 2048)
-          {
-            rainbowCycle(30);
-            _UM++;
-          }
-          break;
+      case 'a':
+        while (_UM < 2048)
+        {
+          rainbowCycle(30);
+          _UM++;
+        }
+        break;
 
-        case 'b':
-          while (_DOIS < 2048)
-          {
-            RGBLoop();
-            _DOIS++;
-          }
-          break;
+      case 'b':
+        while (_DOIS < 2048)
+        {
+          RGBLoop();
+          _DOIS++;
+        }
+        break;
 
         // case 'c':
         //   while (_TRES < 2048)
@@ -611,72 +390,71 @@ void FadeInOut(byte red, byte green, byte blue)
         //   }
         //   break;
 
-        case 'd':
-          while (_QUATRO < 2048)
-          {
-            RunningLights(0xff, 0x00, 0x00, 50);
-            _QUATRO++;
-          }
-          break;
+      case 'd':
+        while (_QUATRO < 2048)
+        {
+          RunningLights(0xff, 0x00, 0x00, 50);
+          _QUATRO++;
+        }
+        break;
 
-        case 'e':
-          while (_CINCO < 2048)
-          {
-            RunningLights(0x00, 0xff, 0x00, 50);
-            _CINCO++;
-          }
-          break;
+      case 'e':
+        while (_CINCO < 2048)
+        {
+          RunningLights(0x00, 0xff, 0x00, 50);
+          _CINCO++;
+        }
+        break;
 
-        case 'f':
-          while (_SEIS < 2048)
-          {
-            RunningLights(0x00, 0x00, 0xff, 50);
-            _SEIS++;
-          }
-          break;
+      case 'f':
+        while (_SEIS < 2048)
+        {
+          RunningLights(0x00, 0x00, 0xff, 50);
+          _SEIS++;
+        }
+        break;
 
-        case 'g':
-          while (_SETE < 2048)
-          {
-            colorWipe(0xff, 0x00, 0x00, 50);
-            _SETE++;
-          }
-          break;
+      case 'g':
+        while (_SETE < 2048)
+        {
+          colorWipe(0xff, 0x00, 0x00, 50);
+          _SETE++;
+        }
+        break;
 
-        case 'h':
-          while (_OITO < 2048)
-          {
-            colorWipe(0x00, 0xff, 0x00, 50);
-            _OITO++;
-          }
-          break;
+      case 'h':
+        while (_OITO < 2048)
+        {
+          colorWipe(0x00, 0xff, 0x00, 50);
+          _OITO++;
+        }
+        break;
 
-        case 'i':
-          while (_NOVE < 2048)
-          {
-            colorWipe(0x00, 0x00, 0xff, 50);
-            _NOVE++;
-          }
-          break;
+      case 'i':
+        while (_NOVE < 2048)
+        {
+          colorWipe(0x00, 0x00, 0xff, 50);
+          _NOVE++;
+        }
+        break;
 
-        case 'j':
-          while (_DEZ < 2048)
-          {
-            colorWipe(0xff, 0xff, 0xff, 50);
-            _DEZ++;
-          }
-          break;
+      case 'j':
+        while (_DEZ < 2048)
+        {
+          colorWipe(0xff, 0xff, 0xff, 50);
+          _DEZ++;
+        }
+        break;
 
-        default:
-          //Serial.println(dado);
-          Serial.println(troca);
-          break;
+      default:
+        //Serial.println(dado);
+        Serial.println(troca);
+        break;
       }
     }
     /***/
     showStrip();
     delay(3);
-
   }
 
   for (int k = 255; k >= 0; k = k - 2)
@@ -691,25 +469,25 @@ void FadeInOut(byte red, byte green, byte blue)
       troca = Serial.read(); //lê os dados da porta serial
       switch (troca)
       {
-        case '0':
-          funcReset(); //Reset
-          break;
+      case '0':
+        funcReset(); //Reset
+        break;
 
-        case 'a':
-          while (_UM < 2048)
-          {
-            rainbowCycle(30);
-            _UM++;
-          }
-          break;
+      case 'a':
+        while (_UM < 2048)
+        {
+          rainbowCycle(30);
+          _UM++;
+        }
+        break;
 
-        case 'b':
-          while (_DOIS < 2048)
-          {
-            RGBLoop();
-            _DOIS++;
-          }
-          break;
+      case 'b':
+        while (_DOIS < 2048)
+        {
+          RGBLoop();
+          _DOIS++;
+        }
+        break;
 
         // case 'c':
         //   while (_TRES < 2048)
@@ -724,72 +502,71 @@ void FadeInOut(byte red, byte green, byte blue)
         //   }
         //   break;
 
-        case 'd':
-          while (_QUATRO < 2048)
-          {
-            RunningLights(0xff, 0x00, 0x00, 50);
-            _QUATRO++;
-          }
-          break;
+      case 'd':
+        while (_QUATRO < 2048)
+        {
+          RunningLights(0xff, 0x00, 0x00, 50);
+          _QUATRO++;
+        }
+        break;
 
-        case 'e':
-          while (_CINCO < 2048)
-          {
-            RunningLights(0x00, 0xff, 0x00, 50);
-            _CINCO++;
-          }
-          break;
+      case 'e':
+        while (_CINCO < 2048)
+        {
+          RunningLights(0x00, 0xff, 0x00, 50);
+          _CINCO++;
+        }
+        break;
 
-        case 'f':
-          while (_SEIS < 2048)
-          {
-            RunningLights(0x00, 0x00, 0xff, 50);
-            _SEIS++;
-          }
-          break;
+      case 'f':
+        while (_SEIS < 2048)
+        {
+          RunningLights(0x00, 0x00, 0xff, 50);
+          _SEIS++;
+        }
+        break;
 
-        case 'g':
-          while (_SETE < 2048)
-          {
-            colorWipe(0xff, 0x00, 0x00, 50);
-            _SETE++;
-          }
-          break;
+      case 'g':
+        while (_SETE < 2048)
+        {
+          colorWipe(0xff, 0x00, 0x00, 50);
+          _SETE++;
+        }
+        break;
 
-        case 'h':
-          while (_OITO < 2048)
-          {
-            colorWipe(0x00, 0xff, 0x00, 50);
-            _OITO++;
-          }
-          break;
+      case 'h':
+        while (_OITO < 2048)
+        {
+          colorWipe(0x00, 0xff, 0x00, 50);
+          _OITO++;
+        }
+        break;
 
-        case 'i':
-          while (_NOVE < 2048)
-          {
-            colorWipe(0x00, 0x00, 0xff, 50);
-            _NOVE++;
-          }
-          break;
+      case 'i':
+        while (_NOVE < 2048)
+        {
+          colorWipe(0x00, 0x00, 0xff, 50);
+          _NOVE++;
+        }
+        break;
 
-        case 'j':
-          while (_DEZ < 2048)
-          {
-            colorWipe(0xff, 0xff, 0xff, 50);
-            _DEZ++;
-          }
-          break;
+      case 'j':
+        while (_DEZ < 2048)
+        {
+          colorWipe(0xff, 0xff, 0xff, 50);
+          _DEZ++;
+        }
+        break;
 
-        default:
-          //Serial.println(dado);
-          Serial.println(troca);
-          break;
+      default:
+        //Serial.println(dado);
+        Serial.println(troca);
+        break;
       }
     }
     /***/
     showStrip();
     delay(3);
-
   }
 }
 
@@ -817,120 +594,6 @@ void RunningLights(byte red, byte green, byte blue, int WaveDelay)
         troca = Serial.read(); //lê os dados da porta serial
         switch (troca)
         {
-          case '0':
-            funcReset(); //Reset
-            break;
-
-          case 'a':
-            while (_UM < 2048)
-            {
-              rainbowCycle(30);
-              _UM++;
-            }
-            break;
-
-          case 'b':
-            while (_DOIS < 2048)
-            {
-              RGBLoop();
-              _DOIS++;
-            }
-            break;
-
-          case 'c':
-            while (_TRES < 2048)
-            {
-              FadeInOut(0x00, 0x00, 0xff); // blue
-              FadeInOut(0x00, 0xff, 0xff); // ciano
-              FadeInOut(0x00, 0xff, 0x00); // green
-              FadeInOut(0xff, 0xff, 0x00); // yellow
-              FadeInOut(0xff, 0x00, 0x00); // red
-              FadeInOut(0xff, 0x14, 0x93); // pink
-              _TRES++;
-            }
-            break;
-
-          case 'd':
-            while (_QUATRO < 2048)
-            {
-              RunningLights(0xff, 0x00, 0x00, 50);
-              _QUATRO++;
-            }
-            break;
-
-          case 'e':
-            while (_CINCO < 2048)
-            {
-              RunningLights(0x00, 0xff, 0x00, 50);
-              _CINCO++;
-            }
-            break;
-
-          case 'f':
-            while (_SEIS < 2048)
-            {
-              RunningLights(0x00, 0x00, 0xff, 50);
-              _SEIS++;
-            }
-            break;
-
-          case 'g':
-            while (_SETE < 2048)
-            {
-              colorWipe(0xff, 0x00, 0x00, 50);
-              _SETE++;
-            }
-            break;
-
-          case 'h':
-            while (_OITO < 2048)
-            {
-              colorWipe(0x00, 0xff, 0x00, 50);
-              _OITO++;
-            }
-            break;
-
-          case 'i':
-            while (_NOVE < 2048)
-            {
-              colorWipe(0x00, 0x00, 0xff, 50);
-              _NOVE++;
-            }
-            break;
-
-          case 'j':
-            while (_DEZ < 2048)
-            {
-              colorWipe(0xff, 0xff, 0xff, 50);
-              _DEZ++;
-            }
-            break;
-
-          default:
-            //Serial.println(dado);
-            Serial.println(troca);
-            break;
-        }
-      }
-      /***/
-    }
-
-    showStrip();
-    delay(WaveDelay);
-  }
-}
-
-void colorWipe(byte red, byte green, byte blue, int SpeedDelay)
-{
-  for (uint16_t i = 0; i < NUM_LEDS; i++)
-  {
-    setPixel(i, red, green, blue);
-    /***/
-    if (Serial.available() > 0)
-    {
-      troca = Serial.read(); //lê os dados da porta serial
-      switch (troca)
-      {
         case '0':
           funcReset(); //Reset
           break;
@@ -1024,6 +687,120 @@ void colorWipe(byte red, byte green, byte blue, int SpeedDelay)
           //Serial.println(dado);
           Serial.println(troca);
           break;
+        }
+      }
+      /***/
+    }
+
+    showStrip();
+    delay(WaveDelay);
+  }
+}
+
+void colorWipe(byte red, byte green, byte blue, int SpeedDelay)
+{
+  for (uint16_t i = 0; i < NUM_LEDS; i++)
+  {
+    setPixel(i, red, green, blue);
+    /***/
+    if (Serial.available() > 0)
+    {
+      troca = Serial.read(); //lê os dados da porta serial
+      switch (troca)
+      {
+      case '0':
+        funcReset(); //Reset
+        break;
+
+      case 'a':
+        while (_UM < 2048)
+        {
+          rainbowCycle(30);
+          _UM++;
+        }
+        break;
+
+      case 'b':
+        while (_DOIS < 2048)
+        {
+          RGBLoop();
+          _DOIS++;
+        }
+        break;
+
+      case 'c':
+        while (_TRES < 2048)
+        {
+          FadeInOut(0x00, 0x00, 0xff); // blue
+          FadeInOut(0x00, 0xff, 0xff); // ciano
+          FadeInOut(0x00, 0xff, 0x00); // green
+          FadeInOut(0xff, 0xff, 0x00); // yellow
+          FadeInOut(0xff, 0x00, 0x00); // red
+          FadeInOut(0xff, 0x14, 0x93); // pink
+          _TRES++;
+        }
+        break;
+
+      case 'd':
+        while (_QUATRO < 2048)
+        {
+          RunningLights(0xff, 0x00, 0x00, 50);
+          _QUATRO++;
+        }
+        break;
+
+      case 'e':
+        while (_CINCO < 2048)
+        {
+          RunningLights(0x00, 0xff, 0x00, 50);
+          _CINCO++;
+        }
+        break;
+
+      case 'f':
+        while (_SEIS < 2048)
+        {
+          RunningLights(0x00, 0x00, 0xff, 50);
+          _SEIS++;
+        }
+        break;
+
+      case 'g':
+        while (_SETE < 2048)
+        {
+          colorWipe(0xff, 0x00, 0x00, 50);
+          _SETE++;
+        }
+        break;
+
+      case 'h':
+        while (_OITO < 2048)
+        {
+          colorWipe(0x00, 0xff, 0x00, 50);
+          _OITO++;
+        }
+        break;
+
+      case 'i':
+        while (_NOVE < 2048)
+        {
+          colorWipe(0x00, 0x00, 0xff, 50);
+          _NOVE++;
+        }
+        break;
+
+      case 'j':
+        while (_DEZ < 2048)
+        {
+          colorWipe(0xff, 0xff, 0xff, 50);
+          _DEZ++;
+        }
+        break;
+
+      default:
+        //Serial.println(dado);
+        Serial.println(troca);
+        break;
       }
     }
     /***/
