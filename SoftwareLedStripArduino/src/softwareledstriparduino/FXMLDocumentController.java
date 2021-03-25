@@ -119,6 +119,148 @@ public class FXMLDocumentController implements Initializable {
     }
 
     /**
+     * ColorWipe
+     *
+     */
+    @FXML
+    private void ColorWipeBLUE() {
+        PrintWriter outputFITA = new PrintWriter(porta.getOutputStream());
+
+        if (ColorWipe == '0' || ColorWipe != '0') {
+            outputFITA.print('9');
+            outputFITA.flush();
+            ColorWipe = '9';
+        } else {
+            outputFITA.print('0');
+            outputFITA.flush();
+            ColorWipe = '0';
+        }
+
+        if (btnCWB.getText().equals("Blue")) {
+            outputFITA.print('i');
+            outputFITA.flush();
+        } else {
+            outputFITA.print('0');
+            outputFITA.flush();
+        }
+    }
+
+    @FXML
+    private void ColorWipeCIAN() {
+        PrintWriter outputFITA = new PrintWriter(porta.getOutputStream());
+
+        if (ColorWipe == '0' || ColorWipe != '0') {
+            outputFITA.print('a');
+            outputFITA.flush();
+            ColorWipe = 'a';
+        } else {
+            outputFITA.print('0');
+            outputFITA.flush();
+            ColorWipe = '0';
+        }
+
+        if (btnCWC.getText().equals("Ciano")) {
+            outputFITA.print('j');
+            outputFITA.flush();
+        } else {
+            outputFITA.print('0');
+            outputFITA.flush();
+        }
+    }
+
+    @FXML
+    private void ColorWipeGREEN() {
+        PrintWriter outputFITA = new PrintWriter(porta.getOutputStream());
+
+        if (ColorWipe == '0' || ColorWipe != '0') {
+            outputFITA.print('b');
+            outputFITA.flush();
+            ColorWipe = 'b';
+        } else {
+            outputFITA.print('0');
+            outputFITA.flush();
+            ColorWipe = '0';
+        }
+
+        if (btnCWG.getText().equals("Green")) {
+            outputFITA.print('k');
+            outputFITA.flush();
+        } else {
+            outputFITA.print('0');
+            outputFITA.flush();
+        }
+    }
+
+    @FXML
+    private void ColorWipeMAGENTA() {
+        PrintWriter outputFITA = new PrintWriter(porta.getOutputStream());
+
+        if (ColorWipe == '0' || ColorWipe != '0') {
+            outputFITA.print('c');
+            outputFITA.flush();
+            ColorWipe = 'c';
+        } else {
+            outputFITA.print('0');
+            outputFITA.flush();
+            ColorWipe = '0';
+        }
+
+        if (btnCWM.getText().equals("Magenta")) {
+            outputFITA.print('l');
+            outputFITA.flush();
+        } else {
+            outputFITA.print('0');
+            outputFITA.flush();
+        }
+    }
+
+    @FXML
+    private void ColorWipeRED() {
+        PrintWriter outputFITA = new PrintWriter(porta.getOutputStream());
+
+        if (ColorWipe == '0' || ColorWipe != '0') {
+            outputFITA.print('d');
+            outputFITA.flush();
+            ColorWipe = 'd';
+        } else {
+            outputFITA.print('0');
+            outputFITA.flush();
+            ColorWipe = '0';
+        }
+
+        if (btnCWR.getText().equals("Red")) {
+            outputFITA.print('m');
+            outputFITA.flush();
+        } else {
+            outputFITA.print('0');
+            outputFITA.flush();
+        }
+    }
+
+    @FXML
+    private void ColorWipeWHITE() {
+        PrintWriter outputFITA = new PrintWriter(porta.getOutputStream());
+
+        if (ColorWipe == '0' || ColorWipe != '0') {
+            outputFITA.print('e');
+            outputFITA.flush();
+            ColorWipe = 'e';
+        } else {
+            outputFITA.print('0');
+            outputFITA.flush();
+            ColorWipe = '0';
+        }
+
+        if (btnCWW.getText().equals("White")) {
+            outputFITA.print('n');
+            outputFITA.flush();
+        } else {
+            outputFITA.print('0');
+            outputFITA.flush();
+        }
+    }
+
+    /**
      * EFEITOS
      *
      */
@@ -299,148 +441,6 @@ public class FXMLDocumentController implements Initializable {
 
         if (btnRLW.getText().equals("White")) {
             outputFITA.print('h');
-            outputFITA.flush();
-        } else {
-            outputFITA.print('0');
-            outputFITA.flush();
-        }
-    }
-
-    /**
-     * ColorWipe
-     *
-     */
-    @FXML
-    private void ColorWipeBLUE() {
-        PrintWriter outputFITA = new PrintWriter(porta.getOutputStream());
-
-        if (ColorWipe == '0' || ColorWipe != '0') {
-            outputFITA.print('9');
-            outputFITA.flush();
-            ColorWipe = '9';
-        } else {
-            outputFITA.print('0');
-            outputFITA.flush();
-            ColorWipe = '0';
-        }
-
-        if (btnCWB.getText().equals("Blue")) {
-            outputFITA.print('i');
-            outputFITA.flush();
-        } else {
-            outputFITA.print('0');
-            outputFITA.flush();
-        }
-    }
-
-    @FXML
-    private void ColorWipeCIAN() {
-        PrintWriter outputFITA = new PrintWriter(porta.getOutputStream());
-
-        if (ColorWipe == '0' || ColorWipe != '0') {
-            outputFITA.print('a');
-            outputFITA.flush();
-            ColorWipe = 'a';
-        } else {
-            outputFITA.print('0');
-            outputFITA.flush();
-            ColorWipe = '0';
-        }
-
-        if (btnCWC.getText().equals("Ciano")) {
-            outputFITA.print('j');
-            outputFITA.flush();
-        } else {
-            outputFITA.print('0');
-            outputFITA.flush();
-        }
-    }
-
-    @FXML
-    private void ColorWipeGREEN() {
-        PrintWriter outputFITA = new PrintWriter(porta.getOutputStream());
-
-        if (ColorWipe == '0' || ColorWipe != '0') {
-            outputFITA.print('b');
-            outputFITA.flush();
-            ColorWipe = 'b';
-        } else {
-            outputFITA.print('0');
-            outputFITA.flush();
-            ColorWipe = '0';
-        }
-
-        if (btnCWG.getText().equals("Green")) {
-            outputFITA.print('k');
-            outputFITA.flush();
-        } else {
-            outputFITA.print('0');
-            outputFITA.flush();
-        }
-    }
-
-    @FXML
-    private void ColorWipeMAGENTA() {
-        PrintWriter outputFITA = new PrintWriter(porta.getOutputStream());
-
-        if (ColorWipe == '0' || ColorWipe != '0') {
-            outputFITA.print('c');
-            outputFITA.flush();
-            ColorWipe = 'c';
-        } else {
-            outputFITA.print('0');
-            outputFITA.flush();
-            ColorWipe = '0';
-        }
-
-        if (btnCWM.getText().equals("Magenta")) {
-            outputFITA.print('l');
-            outputFITA.flush();
-        } else {
-            outputFITA.print('0');
-            outputFITA.flush();
-        }
-    }
-
-    @FXML
-    private void ColorWipeRED() {
-        PrintWriter outputFITA = new PrintWriter(porta.getOutputStream());
-
-        if (ColorWipe == '0' || ColorWipe != '0') {
-            outputFITA.print('d');
-            outputFITA.flush();
-            ColorWipe = 'd';
-        } else {
-            outputFITA.print('0');
-            outputFITA.flush();
-            ColorWipe = '0';
-        }
-
-        if (btnCWR.getText().equals("Red")) {
-            outputFITA.print('m');
-            outputFITA.flush();
-        } else {
-            outputFITA.print('0');
-            outputFITA.flush();
-        }
-    }
-
-    @FXML
-    private void ColorWipeWHITE() {
-        PrintWriter outputFITA = new PrintWriter(porta.getOutputStream());
-
-        if (ColorWipe == '0' || ColorWipe != '0') {
-            outputFITA.print('e');
-            outputFITA.flush();
-            ColorWipe = 'e';
-        } else {
-            outputFITA.print('0');
-            outputFITA.flush();
-            ColorWipe = '0';
-        }
-
-        if (btnCWW.getText().equals("White")) {
-            outputFITA.print('n');
             outputFITA.flush();
         } else {
             outputFITA.print('0');
