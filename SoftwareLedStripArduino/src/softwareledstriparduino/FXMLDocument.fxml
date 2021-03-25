@@ -9,13 +9,13 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="463.0" prefWidth="711.0" styleClass="background" stylesheets="@../view/DarkTheme.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="softwareledstriparduino.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="346.0" prefWidth="408.0" styleClass="background" stylesheets="@../view/DarkTheme.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="softwareledstriparduino.FXMLDocumentController">
     <children>
         <Label fx:id="label" alignment="CENTER" layoutX="149.0" layoutY="35.0" minHeight="16" minWidth="69" styleClass="label-header" text="Nome Aqui" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
         <ComboBox fx:id="cbPortas" layoutX="14.0" layoutY="99.0" promptText="Portas COM" style="-fx-background-color: #ffffff;" />
         <Button fx:id="btnConectar" layoutX="322.0" layoutY="95.0" mnemonicParsing="false" onAction="#conectar" text="Conectar" />
-        <Button fx:id="btnReset" layoutX="344.0" layoutY="365.0" mnemonicParsing="false" onAction="#reset" text="Reset" />
-      <VBox layoutX="14.0" layoutY="147.0" prefHeight="234.0" prefWidth="241.0">
+        <Button fx:id="btnReset" layoutX="344.0" layoutY="302.0" mnemonicParsing="false" onAction="#reset" text="Reset" />
+      <VBox layoutX="14.0" layoutY="147.0" prefHeight="188.0" prefWidth="241.0">
          <children>
               <Accordion fx:id="menuEfeitos" prefHeight="262.0" prefWidth="303.0">
                   <panes>
@@ -27,8 +27,8 @@
                                       <Button fx:id="btnCWG" layoutX="136.0" layoutY="14.0" mnemonicParsing="false" onAction="#ColorWipeGREEN" text="Green" />
                                       <Button fx:id="btnCWB" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#ColorWipeBLUE" text="Blue" />
                                       <Button fx:id="btnCWW" layoutX="153.0" layoutY="60.0" mnemonicParsing="false" onAction="#ColorWipeWHITE" text="White" />
-                              <Button layoutX="14.0" layoutY="60.0" mnemonicParsing="false" text="Magenta" />
-                              <Button layoutX="72.0" layoutY="14.0" mnemonicParsing="false" text="Ciano" />
+                              <Button fx:id="btnCWM" layoutX="14.0" layoutY="60.0" mnemonicParsing="false" onAction="#ColorWipeMAGENTA" text="Magenta" />
+                              <Button fx:id="btnCWC" layoutX="72.0" layoutY="14.0" mnemonicParsing="false" onAction="#ColorWipeCIAN" text="Ciano" />
                                   </children>
                               </AnchorPane>
                           </content>
@@ -37,11 +37,10 @@
                           <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="150.0" prefWidth="169.0" style="-fx-border-radius: 20;" styleClass="pane" stylesheets="@../view/DarkTheme.css">
                                   <children>
-                                      <Button fx:id="btnRC" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#ligarRainbowCycle" text="Rainbow Cycle" />
-                                      <Button fx:id="btnRGB" layoutX="14.0" layoutY="104.0" mnemonicParsing="false" onAction="#ligarRGBLoop" text="RGB Loop" />
-                                      <Button fx:id="btnFIO" layoutX="14.0" layoutY="58.0" mnemonicParsing="false" onAction="#ligarFadeInOut" text="Fade In Out" />
-                              <Button layoutX="133.0" layoutY="14.0" mnemonicParsing="false" text="Rainbow" />
-                              <Button layoutX="134.0" layoutY="58.0" mnemonicParsing="false" text="Random" />
+                                      <Button fx:id="btnRC" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#RainbowCycle" text="Rainbow Cycle" />
+                                      <Button fx:id="btnFIO" layoutX="14.0" layoutY="58.0" mnemonicParsing="false" onAction="#FadeInOut" text="Fade In Out" />
+                              <Button fx:id="btnRB" layoutX="133.0" layoutY="14.0" mnemonicParsing="false" onAction="#Rainbow" text="Rainbow" />
+                              <Button fx:id="btnRA" layoutX="134.0" layoutY="58.0" mnemonicParsing="false" onAction="#Random" text="Random" />
                                   </children>
                               </AnchorPane>
                           </content>
@@ -50,10 +49,10 @@
                           <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                   <children>
-                                      <Button fx:id="btnRLR" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#RunningLightsRED" text="Red" />
-                                      <Button fx:id="btnRLG" layoutX="151.0" layoutY="14.0" mnemonicParsing="false" onAction="#RunningLightsGREEN" text="Green" />
-                                      <Button fx:id="btnRLB" layoutX="13.0" layoutY="84.0" mnemonicParsing="false" onAction="#RunningLightsBLUE" text="Blue" />
-                              <Button layoutX="151.0" layoutY="84.0" mnemonicParsing="false" text="White" />
+                                      <Button fx:id="btnRLR" layoutX="55.0" layoutY="14.0" mnemonicParsing="false" onAction="#RunningLightsRED" text="Red" />
+                                      <Button fx:id="btnRLG" layoutX="120.0" layoutY="14.0" mnemonicParsing="false" onAction="#RunningLightsGREEN" text="Green" />
+                                      <Button fx:id="btnRLB" layoutX="54.0" layoutY="53.0" mnemonicParsing="false" onAction="#RunningLightsBLUE" text="Blue" />
+                              <Button fx:id="btnRLW" layoutX="120.0" layoutY="53.0" mnemonicParsing="false" onAction="#RunningLightsWHITE" text="White" />
                                   </children>
                               </AnchorPane>
                           </content>
