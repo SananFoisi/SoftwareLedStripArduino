@@ -1,14 +1,18 @@
-1	    A	RainbowCycle
-2	    B	Rainbow
-3	    C	FadeInOut  
-4       D   Random
-5	    E	Running Lights	(RED)
-6	    F	Running Lights	(GREEN)
-7	    G	Running Lights  (BLUE)
-8       H   Running Lights  (WHITE)
-9       I   Color Wipe      (BLUE)
-10 (a)  J   Color Wipe      (CIAN)
-11 (b)  K   Color Wipe      (GREEN)
-12 (c)  L   Color Wipe      (MAGENTA)
-13 (d)  M   Color Wipe      (RED)
-14 (e)  N   Color Wipe      (WHITE)
+0	0	Reset
+
+1	A	RainbowCycle
+2	B	Rainbow
+3	C	FadeInOut  
+4	D	Random
+
+5	E	Running Lights	(RED)
+6	F	Running Lights	(GREEN)
+7	G	Running Lights  (BLUE)
+8	H	Running Lights  (WHITE)
+
+9	I	Color Wipe      (BLUE)
+10 (a)	J	Color Wipe      (CIAN)
+11 (b)	K	Color Wipe      (GREEN)
+12 (c)	L	Color Wipe      (MAGENTA)
+13 (d)	M	Color Wipe      (RED)
+14 (e)	N	Color Wipe      (WHITE)
