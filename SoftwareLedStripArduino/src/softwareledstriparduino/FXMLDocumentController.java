@@ -112,7 +112,7 @@ public class FXMLDocumentController implements Initializable {
     private void reset() {
         PrintWriter outputFITA = new PrintWriter(porta.getOutputStream());
 
-        if (btnReset.getText().equals("Reset")) {
+        if (btnReset.getText().equals("Desligar")) {
             outputFITA.print('0');
             outputFITA.flush();
         }

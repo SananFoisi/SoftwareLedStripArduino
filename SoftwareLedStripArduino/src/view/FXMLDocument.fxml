@@ -9,13 +9,13 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="346.0" prefWidth="408.0" styleClass="background" stylesheets="@../view/DarkTheme.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="softwareledstriparduino.FXMLDocumentController">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="400.0" styleClass="background" stylesheets="@../view/DarkTheme.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="softwareledstriparduino.FXMLDocumentController">
     <children>
         <Label fx:id="label" alignment="CENTER" layoutX="149.0" layoutY="35.0" minHeight="16" minWidth="69" styleClass="label-header" text="Nome Aqui" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
-        <ComboBox fx:id="cbPortas" layoutX="14.0" layoutY="99.0" promptText="Portas COM" style="-fx-background-color: #ffffff;" />
-        <Button fx:id="btnConectar" layoutX="322.0" layoutY="95.0" mnemonicParsing="false" onAction="#conectar" text="Conectar" />
-        <Button fx:id="btnReset" layoutX="344.0" layoutY="302.0" mnemonicParsing="false" onAction="#reset" text="Reset" />
-      <VBox layoutX="14.0" layoutY="147.0" prefHeight="188.0" prefWidth="241.0">
+        <ComboBox fx:id="cbPortas" layoutX="14.0" layoutY="99.0" promptText="Portas COM" style="-fx-background-color: #ffffff;" AnchorPane.leftAnchor="10.0" />
+        <Button fx:id="btnConectar" layoutX="322.0" layoutY="95.0" mnemonicParsing="false" onAction="#conectar" text="Conectar" AnchorPane.rightAnchor="10.0" />
+        <Button fx:id="btnReset" layoutX="344.0" layoutY="302.0" mnemonicParsing="false" onAction="#reset" text="Desligar" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+      <VBox layoutX="14.0" layoutY="147.0" prefHeight="188.0" prefWidth="214.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0">
          <children>
               <Accordion fx:id="menuEfeitos" prefHeight="262.0" prefWidth="303.0">
                   <panes>
