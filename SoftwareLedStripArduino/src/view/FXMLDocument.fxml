@@ -9,17 +9,20 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="400.0" styleClass="background" stylesheets="@../view/DarkTheme.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="softwareledstriparduino.FXMLDocumentController">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="380.0" prefWidth="400.0" styleClass="background" stylesheets="@../view/DarkTheme.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="softwareledstriparduino.FXMLDocumentController">
     <children>
-        <Label fx:id="label" alignment="CENTER" layoutX="149.0" layoutY="35.0" minHeight="16" minWidth="69" styleClass="label-header" text="Nome Aqui" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
+        <Label fx:id="label" alignment="CENTER" layoutX="149.0" layoutY="35.0" minHeight="16" minWidth="69" styleClass="label-header" text="LED Strip Monitor" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <font>
+            <Font name="Elephant" size="12.0" />
+         </font></Label>
         <ComboBox fx:id="cbPortas" layoutX="14.0" layoutY="99.0" promptText="Portas COM" style="-fx-background-color: #ffffff;" AnchorPane.leftAnchor="10.0" />
         <Button fx:id="btnConectar" layoutX="322.0" layoutY="95.0" mnemonicParsing="false" onAction="#conectar" text="Conectar" AnchorPane.rightAnchor="10.0" />
         <Button fx:id="btnReset" layoutX="344.0" layoutY="302.0" mnemonicParsing="false" onAction="#reset" text="Desligar" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" />
-        <VBox layoutX="14.0" layoutY="147.0" prefHeight="188.0" prefWidth="214.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0">
+        <VBox layoutX="14.0" layoutY="147.0" prefHeight="196.0" prefWidth="222.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0">
             <children>
                 <Accordion fx:id="menuEfeitos" prefHeight="262.0" prefWidth="303.0">
                     <panes>
-                        <TitledPane animated="false" prefHeight="182.0" prefWidth="250.0" text="Color Wipe">
+                        <TitledPane alignment="CENTER" animated="false" prefHeight="182.0" prefWidth="250.0" text="Color Wipe" textAlignment="CENTER">
                             <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="220.0">
                                     <children>
@@ -30,22 +33,34 @@
                                         <Button fx:id="btnCWM" layoutX="14.0" layoutY="60.0" mnemonicParsing="false" onAction="#ColorWipeMAGENTA" text="Magenta" />
                                         <Button fx:id="btnCWC" layoutX="72.0" layoutY="14.0" mnemonicParsing="false" onAction="#ColorWipeCIAN" text="Ciano" />
                                     </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
                                 </AnchorPane>
                             </content>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
                         </TitledPane>
-                        <TitledPane animated="false" prefHeight="146.0" prefWidth="272.0" text="Efeitos">
+                        <TitledPane alignment="CENTER" animated="false" prefHeight="134.0" prefWidth="222.0" text="Efeitos" textAlignment="CENTER">
                             <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="150.0" prefWidth="169.0" style="-fx-border-radius: 20;" styleClass="pane" stylesheets="@../view/DarkTheme.css">
                                     <children>
-                                        <Button fx:id="btnRC" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#RainbowCycle" text="Rainbow Cycle" />
+                                        <Button fx:id="btnRC" alignment="CENTER" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#RainbowCycle" stylesheets="@DarkTheme.css" text="Rainbow Cycle" />
                                         <Button fx:id="btnFIO" layoutX="14.0" layoutY="58.0" mnemonicParsing="false" onAction="#FadeInOut" text="Fade In Out" />
                                         <Button fx:id="btnRB" layoutX="133.0" layoutY="14.0" mnemonicParsing="false" onAction="#Rainbow" text="Rainbow" />
                                         <Button fx:id="btnRA" layoutX="134.0" layoutY="58.0" mnemonicParsing="false" onAction="#Random" text="Random" />
                                     </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
                                 </AnchorPane>
                             </content>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
                         </TitledPane>
-                        <TitledPane animated="false" text="Running Lights ">
+                        <TitledPane alignment="CENTER" animated="false" text="Running Lights " textAlignment="CENTER">
                             <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                     <children>
@@ -54,8 +69,14 @@
                                         <Button fx:id="btnRLB" layoutX="54.0" layoutY="53.0" mnemonicParsing="false" onAction="#RunningLightsBLUE" text="Blue" />
                                         <Button fx:id="btnRLW" layoutX="120.0" layoutY="53.0" mnemonicParsing="false" onAction="#RunningLightsWHITE" text="White" />
                                     </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
                                 </AnchorPane>
                             </content>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
                         </TitledPane>
                     </panes>
                 </Accordion>
