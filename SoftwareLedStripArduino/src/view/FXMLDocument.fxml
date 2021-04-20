@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.text.*?>
@@ -22,7 +23,7 @@
             <children>
                 <Accordion fx:id="menuEfeitos" prefHeight="262.0" prefWidth="303.0">
                     <panes>
-                        <TitledPane alignment="CENTER" animated="false" prefHeight="182.0" prefWidth="250.0" text="Color Wipe" textAlignment="CENTER">
+                        <TitledPane alignment="CENTER" animated="false" expanded="false" prefHeight="182.0" prefWidth="250.0" text="Color Wipe" textAlignment="CENTER">
                             <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="220.0">
                                     <children>
@@ -82,6 +83,7 @@
                 </Accordion>
             </children>
         </VBox>
+      <ImageView fx:id="imgView" fitHeight="120.0" fitWidth="120.0" layoutX="258.0" layoutY="190.0" pickOnBounds="true" preserveRatio="true" />
     </children>
     <opaqueInsets>
         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />

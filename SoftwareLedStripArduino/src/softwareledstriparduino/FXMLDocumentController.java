@@ -14,6 +14,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Accordion;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 /**
  *
@@ -21,6 +23,9 @@ import javafx.scene.control.ComboBox;
  */
 public class FXMLDocumentController implements Initializable {
 
+    
+    @FXML
+    private ImageView imgView;
     @FXML
     private ComboBox cbPortas;
 
@@ -113,8 +118,15 @@ public class FXMLDocumentController implements Initializable {
         PrintWriter outputFITA = new PrintWriter(porta.getOutputStream());
 
         if (btnReset.getText().equals("Desligar")) {
+
+            imgView.setVisible(true);
+            imgView.setImage(rainbow.png);
+            
+            
             outputFITA.print('0');
             outputFITA.flush();
+            
+
         }
     }
 
