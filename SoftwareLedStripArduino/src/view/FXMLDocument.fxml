@@ -18,7 +18,7 @@
          </font></Label>
         <ComboBox fx:id="cbPortas" layoutX="14.0" layoutY="99.0" promptText="Portas COM" style="-fx-background-color: #ffffff;" AnchorPane.leftAnchor="10.0" />
         <Button fx:id="btnConectar" layoutX="322.0" layoutY="95.0" mnemonicParsing="false" onAction="#conectar" text="Conectar" AnchorPane.rightAnchor="10.0" />
-        <Button fx:id="btnReset" layoutX="344.0" layoutY="302.0" mnemonicParsing="false" onAction="#reset" text="Desligar" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+        <Button fx:id="btnReset" layoutX="344.0" layoutY="302.0" mnemonicParsing="false" onAction="#reset" onMousePressed="#MousePressionado" text="Desligar" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" />
         <VBox layoutX="14.0" layoutY="147.0" prefHeight="196.0" prefWidth="222.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0">
             <children>
                 <Accordion fx:id="menuEfeitos" prefHeight="262.0" prefWidth="303.0">
@@ -83,7 +83,10 @@
                 </Accordion>
             </children>
         </VBox>
-      <ImageView fx:id="imgView" fitHeight="120.0" fitWidth="120.0" layoutX="258.0" layoutY="190.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgView" fitHeight="120.0" fitWidth="120.0" layoutX="258.0" layoutY="162.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@rainbow.png" />
+         </image></ImageView>
     </children>
     <opaqueInsets>
         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />

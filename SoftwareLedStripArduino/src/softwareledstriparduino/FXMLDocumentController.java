@@ -6,7 +6,6 @@
 package softwareledstriparduino;
 
 import com.fazecast.jSerialComm.SerialPort;
-import java.io.FileInputStream;
 import java.io.PrintWriter;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -15,8 +14,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Accordion;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 
 /**
  *
@@ -24,8 +21,6 @@ import javafx.scene.image.ImageView;
  */
 public class FXMLDocumentController implements Initializable {
 
-    @FXML
-    private ImageView imgView;
     @FXML
     private ComboBox cbPortas;
 
@@ -84,7 +79,6 @@ public class FXMLDocumentController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         carregarPortas();
         menuEfeitos.setDisable(true);
-
     }
 
     private void carregarPortas() {
@@ -112,8 +106,6 @@ public class FXMLDocumentController implements Initializable {
             menuEfeitos.setDisable(true);
         }
     }
-    
-    Image image = new Image("rainbow.png");
 
     @FXML
     private void reset() {
@@ -121,25 +113,15 @@ public class FXMLDocumentController implements Initializable {
 
         if (btnReset.getText().equals("Desligar")) {
 
-            imgView.setVisible(true);
-            imgView.setImage(image);
-            /*
-            //Passing FileInputStream object as a parameter 
-FileInputStream inputstream = new FileInputStream("C:\\images\\image.jpg"); 
-Image image = new Image(inputstream); 
-            
-            
-            https://docs.oracle.com/javase/8/javafx/api/javafx/scene/image/Image.html
-            https://docs.oracle.com/javase/8/javafx/api/javafx/scene/image/ImageView.html
-            
-            
-             */
-
             outputFITA.print('0');
             outputFITA.flush();
 
         }
     }
+    
+    
+    
+    
 
     /**
      * ColorWipe
