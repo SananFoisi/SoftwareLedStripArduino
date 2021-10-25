@@ -59,7 +59,7 @@ void setup()
   Serial.begin(9600);       //frequência da porta serial
   strip.begin();            //Inicialize o objeto de tira NeoPixel (NECESSÁRIO)
   strip.show();             //DESLIGUE todos os pixels o mais rápido possível
-  strip.setBrightness(50); //Brilho da tira
+  strip.setBrightness(25); //Brilho da tira
 }
 
 void loop()
